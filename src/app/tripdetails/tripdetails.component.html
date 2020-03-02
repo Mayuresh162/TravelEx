@@ -1,0 +1,27 @@
+<div class="medium-list" style="margin-top:70px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <form [formGroup]="tripDetForm" (ngSubmit)="onProceed()">
+        <div class="form-container">
+          <mat-form-field *ngIf="!isLogged">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" formControlName="email" placeholder="abc@example.com"  ngModel email>
+          </mat-form-field>
+          <mat-form-field *ngIf="!isLogged">
+            <mat-label>Phone Number</mat-label>
+            <input matInput type="text" formControlName="phone" ngModel phone> 
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Pickup Time</mat-label>
+            <input matInput type="time" formControlName="pickupTime" ngModel pickupTime required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Pickup Location</mat-label>
+            <input matInput type="text" formControlName="pickupLoc" ngModel pickupLoc required>
+          </mat-form-field>
+          <button type="submit" color="primary" mat-flat-button>Proceed for payment</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="medium-list" style="margin-top:70px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <form [formGroup]="triptypeForm" (ngSubmit)="onTrip()">
+        <div class="form-container">
+          <mat-radio-group>
+            <mat-radio-button value="One way" (click)="onTick()">One Way</mat-radio-button> &nbsp;
+            <mat-radio-button value="Round Trip" (click)="onTick()">Round Trip</mat-radio-button> &nbsp;
+            <mat-radio-button value="Multi City">Multi City</mat-radio-button> &nbsp;
+            <mat-radio-button value="Package Option">Package Option</mat-radio-button>
+          </mat-radio-group>
+          <br>
+          <mat-form-field>
+            <input matInput value="Bangalore" disabled>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>To</mat-label>
+            <input matInput type="text" formControlName="to" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Departure Date</mat-label>
+            <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="myDatePicker1" formControlName="depDate" required>
+            <mat-datepicker-toggle [for]="myDatePicker1" matSuffix></mat-datepicker-toggle>
+            <mat-datepicker #myDatePicker1></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Return Date</mat-label>
+            <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="myDatePicker2" formControlName="returnDate" [disabled]="isTick">
+            <mat-datepicker-toggle [for]="myDatePicker2" matSuffix></mat-datepicker-toggle>
+            <mat-datepicker #myDatePicker2></mat-datepicker>
+          </mat-form-field>
+          <button type="submit" color="primary" mat-flat-button [disabled]="!isTick">Search</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
