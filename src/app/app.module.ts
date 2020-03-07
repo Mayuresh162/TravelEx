@@ -17,7 +17,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatTableModule } from '@angular/material/table';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { TriptypeComponent } from './triptype/triptype.component';
@@ -25,6 +26,7 @@ import { BookingComponent } from './booking/booking.component';
 import { TripdetailsComponent } from './tripdetails/tripdetails.component';
 import { PaymentComponent } from './payment/payment.component';
 import { TicketComponent } from './ticket/ticket.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { TicketComponent } from './ticket/ticket.component';
     BookingComponent,
     TripdetailsComponent,
     PaymentComponent,
-    TicketComponent
+    TicketComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +59,7 @@ import { TicketComponent } from './ticket/ticket.component';
     MatTableModule,
     MatCardModule,
     MatCardModule,
+    MatDialogModule,
     HttpClientModule
   ],
   providers: [],

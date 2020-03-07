@@ -1,0 +1,43 @@
+<mat-toolbar>
+  <span>Welcome Aboard!</span>
+</mat-toolbar>
+<div class="medium-list">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <form [formGroup]="regForm" (ngSubmit)="regForm.valid && onRegister()">
+        <div class="form-container">
+          <mat-form-field >
+            <mat-label>Full name</mat-label>
+            <input matInput type="text" formControlName="fullName" ngModel fullName required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput type="email" formControlName="email" placeholder="abc@example.com" ngModel email required>
+          </mat-form-field>
+          <mat-form-field >
+            <mat-label>Current address</mat-label>
+            <input matInput type="text" formControlName="curAddress" ngModel curAddress required>
+          </mat-form-field>
+          <mat-form-field >
+            <mat-label>Phone number</mat-label>
+            <input matInput type="text" formControlName="phone" ngModel phone required>
+          </mat-form-field>
+          <mat-form-field >
+            <mat-label>City</mat-label>
+            <input matInput type="text" formControlName="city" ngModel city required>
+          </mat-form-field>
+          <mat-form-field >
+            <mat-label>Pin code</mat-label>
+            <input matInput type="text" formControlName="code" ngModel code required>
+          </mat-form-field>
+          <mat-radio-group formControlName="gender">
+            <mat-radio-button value="1">Male</mat-radio-button> &nbsp;
+            <mat-radio-button value="2">Female</mat-radio-button> &nbsp;
+            <mat-radio-button value="3">Others</mat-radio-button> &nbsp;
+          </mat-radio-group> <br>
+          <button type="submit" color="primary" mat-flat-button [disabled]="!regForm.valid">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
